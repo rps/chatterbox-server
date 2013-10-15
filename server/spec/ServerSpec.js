@@ -30,7 +30,6 @@ function StubResponse() {
     self._headers = headers;
   };
   this.end = function(data) {
-    console.log("Response.end called.");
     self._ended = true;
     self._data = data;
   };
@@ -89,7 +88,6 @@ describe("Node Server Request Listener Function", function() {
    var res = new StubResponse();
 
    handler.handleRequest(req, res);
-   console.log("Res is " + res);
 
    // Wait some time before checking results:
    waits(1000);
